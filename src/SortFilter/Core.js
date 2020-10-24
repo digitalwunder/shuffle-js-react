@@ -27,12 +27,13 @@ class Core extends Component {
     /**
      * Kick off the network request and update the state once it returns.
      */
-    const { taxonomies } = this.props;
+    const { taxonomies, sortAllText } = this.props;
     this._loadProps()
       .then(() => {
         this.setState({
           // taxonomies,
-          taxonomiesBodyTypeNames: Object.keys(taxonomies['Body Types'])
+          taxonomiesBodyTypeNames: Object.keys(taxonomies['Body Types']),
+          sortAllText: sortAllText
         });
       });
   }
@@ -163,7 +164,7 @@ class Core extends Component {
         <div className="sort-mainblock__sorting">
           <div className="row">
             {/* <Search onKeyUp={this.handleSearchKeyup} /> */}
-            <SortButtons onClickByName={this.sortByName} onClickAll={this.sortAll} taxonomies={taxonomiesBodyTypeNames} allTrue sortAllText="All" />
+            <SortButtons onClickByName={this.sortByName} onClickAll={this.sortAll} taxonomies={taxonomiesBodyTypeNames} allTrue sortAllText={sortAllText} />
             {/* <SelectBoxes onClickByName={this.sortByText} taxonomies={taxonomies} /> */}
           </div>
         </div>
@@ -183,6 +184,7 @@ Core.propTypes = {
   // taxonomies: PropTypes.arrayOf(PropTypes.object).isRequired,
   taxonomies: PropTypes.objectOf(PropTypes.object).isRequired,
   itemSelector: PropTypes.string.isRequired,
+  sortAllText: PropTypes.string,
   // children: PropTypes.element.isRequired
   children: PropTypes.oneOfType([
     PropTypes.element,

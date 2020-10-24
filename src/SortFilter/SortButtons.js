@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import PropTypes from 'prop-types';
 import {
   jsUcfirst
@@ -7,9 +8,6 @@ import {
 // import './index.css';
 
 // const classnames = require('classnames');
-$(document).on('click', '#sjsr-sort-button button', function (e) {
-  $(".active").not($(this).addClass('active')).removeClass();
-});
 
 // export default class SortButtons extends Component {
 export default function SortButtons(props) {
@@ -19,7 +17,6 @@ export default function SortButtons(props) {
   } = props;
   return (
     <div id="sjsr-sort-button" className="col-md-12 procedure-main margin--5tb">
-      // <div className="procedure-main__label flex padding--5lr">Sort by Procedures</div>
       {titleButton ? <div>{titleButton}</div> : null }
       {allTrue ? <button type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickAll}>{sortAllText}</button> : null }
       {taxonomiesArray.map((taxonomy, index) => <button key={index} type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickByName}>{jsUcfirst(taxonomy)}</button>)}
@@ -41,6 +38,10 @@ SortButtons.defaultProps = {
   onClickByName: (event) => {
     event.preventDefault();
     event.stopPropagation();
+    $(document).on('click', '#sjsr-sort-button button', function () {
+      console.log('click')
+      $('.active').not($(this).addClass('active')).removeClass();
+    });
   },
   onClickAll: (event) => {
     event.preventDefault();
