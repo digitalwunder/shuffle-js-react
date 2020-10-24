@@ -1,6 +1,6 @@
 {
-  "name": "shufflejs-react",
-  "version": "0.2.4",
+  "name": "shuffle-js-react",
+  "version": "0.1.1",
   "description": "React component for ShuffleJs",
   "main": "./lib/index.js",
   "scripts": {
@@ -41,19 +41,19 @@
     "javascript",
     "react"
   ],
-  "author": "Aricode00 <aricode00@gmail.com>",
+  "author": "Michael Reich <m.reich@digitalwunder.io>",
   "license": "MIT",
   "engines": {
     "node": "12.6.0",
     "npm": "6.9.0"
   },
   "bugs": {
-    "url": "https://github.com/ar-to/shufflejs-react/issues"
+    "url": "https://github.com/digitalwunder/shuffle-js-react/issues"
   },
   "nyc": {
     "exclude": "src/SortFilter/**/*.js"
   },
-  "homepage": "https://ar-to.github.io/shufflejs-react/",
+  "homepage": "https://github.com/digitalwunder/shuffle-js-react",
   "devDependencies": {
     "@babel/cli": "^7.0.0",
     "@babel/core": "^7.8.3",
