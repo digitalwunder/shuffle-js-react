@@ -74,7 +74,6 @@ class Core extends Component {
     return defaultValue;
   }
 
-
   /**
    * Search handlers via shufflejs filter
    * Get search text from input value

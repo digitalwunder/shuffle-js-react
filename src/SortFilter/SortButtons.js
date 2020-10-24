@@ -7,6 +7,9 @@ import {
 // import './index.css';
 
 // const classnames = require('classnames');
+$(document).on('click', '#sjsr-sort-button button', function (e) {
+  $(".active").not($(this).addClass('active')).removeClass();
+});
 
 // export default class SortButtons extends Component {
 export default function SortButtons(props) {
@@ -16,10 +19,10 @@ export default function SortButtons(props) {
   } = props;
   return (
     <div id="sjsr-sort-button" className="col-md-12 procedure-main margin--5tb">
-      <div className="procedure-main__label flex padding--5lr">Sort by Procedures</div>
+      // <div className="procedure-main__label flex padding--5lr">Sort by Procedures</div>
       {titleButton ? <div>{titleButton}</div> : null }
-      {taxonomiesArray.map((taxonomy, index) => <button key={index} type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickByName}>{jsUcfirst(taxonomy)}</button>)}
       {allTrue ? <button type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickAll}>{sortAllText}</button> : null }
+      {taxonomiesArray.map((taxonomy, index) => <button key={index} type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickByName}>{jsUcfirst(taxonomy)}</button>)}
     </div>
   );
 }

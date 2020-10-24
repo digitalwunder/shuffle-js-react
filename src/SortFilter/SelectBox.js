@@ -63,8 +63,8 @@ export default class SelectBox extends Component {
     return (
       <div className="select-box padding--5">
         <select id="select-tag" className="select__tag" name={`select-${firstOption}`} onChange={this.changeFunc}>
-          <option value={`${firstOption}`}>{firstOption}</option>
           {options && options.map((option, index) => <option key={index} value={option.name}>{option.name}</option>)}
+          <option value={`${firstOption}`}>{firstOption}</option>
         </select>
       </div>
     );
