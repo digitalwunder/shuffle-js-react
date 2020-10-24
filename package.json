@@ -1,0 +1,94 @@
+{
+  "name": "shufflejs-react",
+  "version": "0.2.4",
+  "description": "React component for ShuffleJs",
+  "main": "./lib/index.js",
+  "scripts": {
+    "clean": "rimraf lib dist",
+    "clean:public": "rimraf public",
+    "test": "npm run lint && npm run test:only",
+    "test:all": "npm run lint && npm run cover",
+    "test:prod": "cross-env BABEL_ENV=production npm run test",
+    "test:only": "mocha --require @babel/register --require @babel/polyfill --recursive",
+    "test:watch": "npm test -- --watch",
+    "test:examples": "node examples/",
+    "test:babel": "babel --version",
+    "test:babelv7": "npx babel-upgrade",
+    "test:jest": "jest --coverage=true",
+    "test:jest-update": "jest --updateSnapshot",
+    "cover": "nyc --check-coverage npm run test:only",
+    "lint": "eslint src test",
+    "build": "cross-env BABEL_ENV=production babel src --out-dir lib",
+    "prepublish": "npm run clean && npm run lint && npm run test && npm run build",
+    "start": "parcel ./docs/index.html",
+    "parcel:watch": "parcel watch ./docs/index.html --public-url ./",
+    "predeploy": "npm run clean:public && parcel build ./docs/index.html --out-dir ./public --public-url ./ --no-cache",
+    "deploy": "gh-pages -d public"
+  },
+  "files": [
+    "lib",
+    "src"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ar-to/shufflejs-react.git"
+  },
+  "keywords": [
+    "shufflejs",
+    "npm",
+    "module",
+    "node",
+    "javascript",
+    "react"
+  ],
+  "author": "Aricode00 <aricode00@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": "12.6.0",
+    "npm": "6.9.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ar-to/shufflejs-react/issues"
+  },
+  "nyc": {
+    "exclude": "src/SortFilter/**/*.js"
+  },
+  "homepage": "https://ar-to.github.io/shufflejs-react/",
+  "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.0.0",
+    "@babel/polyfill": "^7.8.3",
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/register": "^7.8.3",
+    "babel-eslint": "^10.0.3",
+    "babel-plugin-add-module-exports": "^1.0.2",
+    "babel-plugin-css-modules-transform": "^1.6.2",
+    "babel-preset-minify": "^0.5.1",
+    "chai": "^4.2.0",
+    "cross-env": "^7.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.18.0",
+    "jest": "^25.1.0",
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "parcel-bundler": "^1.12.4",
+    "react-test-renderer": "^16.12.0",
+    "rimraf": "^3.0.0"
+  },
+  "dependencies": {
+    "bootstrap": "^4.4.1",
+    "gh-pages": "^2.2.0",
+    "jquery": "^3.4.1",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "shufflejs": "^5.2.3"
+  }
+}

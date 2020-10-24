@@ -1,0 +1,40 @@
+{
+  "Body Types": {
+    "people": {
+      "slug": "people",
+      "name": "People",
+      "link": "/bodytypes/people",
+      "count": null
+    },
+    "food": {
+      "slug": "food",
+      "name": "Food",
+      "link": "/bodytypes/food",
+      "count": null
+    },
+    "cat": {
+      "slug": "cat",
+      "name": "Cat",
+      "link": "/bodytypes/cat",
+      "count": null
+    },
+    "city": {
+      "slug": "city",
+      "name": "City",
+      "link": "/bodytypes/city",
+      "count": null
+    },
+    "nature": {
+      "slug": "nature",
+      "name": "Nature",
+      "link": "/bodytypes/nature",
+      "count": null
+    },
+    "abstract": {
+      "slug": "abstract",
+      "name": "Abstract",
+      "link": "/bodytypes/abstract",
+      "count": null
+    }
+  }
+}

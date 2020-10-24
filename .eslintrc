@@ -1,0 +1,23 @@
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "mocha": true,
+    "browser": true// important so document & window are not undefined
+  },
+  "rules": {
+    "linebreak-style": 0, // linebreak-style: ["error", "windows"] is better but seems to also cause errors in linux
+    "comma-dangle": ["error", "only-multiline"],
+    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
+    "no-underscore-dangle": "off",
+    "camelcase": ["error", {"allow": ["^UNSAFE_"]}],// allow react legacy lifecycle names
+    "react/no-array-index-key": "off",// see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/no-array-index-key.md
+    // "react/jsx-props-no-spreading": ["error", {
+    //   "html": "ignore",
+    //   "custom": "ignore"
+    // }], // see https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md; a Not valid error occurs on npm run test see https://github.com/yannickcr/eslint-plugin-react/issues/2387
+    "max-len": "off",// see https://eslint.org/docs/rules/max-len; may be worth modifying it instead of turning it off
+    "no-restricted-syntax": "off",// https://eslint.org/docs/rules/no-restricted-syntax; may be worth modifying it instead of turning it off
+    "import/no-extraneous-dependencies": ["error", {"devDependencies": ["**/*.test.js", "**/*.test.ts", "**/*.test.tsx"]}]// see https://stackoverflow.com/a/55863857 for reason
+  }
+}

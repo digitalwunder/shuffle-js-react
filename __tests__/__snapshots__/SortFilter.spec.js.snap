@@ -1,0 +1,137 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Instantiate SortFilter component via mount 1`] = `
+<div
+  class="container"
+>
+  <div
+    class="sort-mainblock"
+  >
+    <div
+      class="sort-mainblock__sorting"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-12 procedure-main margin--5tb"
+          id="sjsr-sort-button"
+        >
+          <div
+            class="procedure-main__label flex padding--5lr"
+          >
+            Sort by Procedures
+          </div>
+          <button
+            class="btn btn-outline-secondary btn-sm margin--5"
+            type="button"
+          >
+            All
+          </button>
+        </div>
+      </div>
+    </div>
+    <div
+      class="row shuffle"
+      classtosort="sortblock"
+      style="overflow: hidden; height: 0px; transition: height 250ms cubic-bezier(0.4, 0.0, 0.2, 1);"
+    >
+      <div
+        class="col-md-6 sortblock shuffle-item shuffle-item--visible"
+        data-groups="[\\"Cat\\",\\"Cat Procedures\\",\\"Cat Lift\\"]"
+        style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); transition-property: transform,opacity;"
+      >
+        <div
+          class="aspect aspect--4x3"
+        >
+          <div
+            class="aspect__inner"
+          >
+            <img
+              alt=""
+              class="element__img"
+              src="https://images.unsplash.com/photo-1484244233201-29892afe6a2c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=14d236624576109b51e85bd5d7ebfbfc"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        aria-hidden="true"
+        class="col-md-6 sortblock shuffle-item shuffle-item--hidden"
+        data-groups="[\\"City\\"]"
+        style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 0; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); transition-property: transform,opacity; transform: translate(0px, 0px) scale(0.001); transition-delay: 0ms;"
+      >
+        <div
+          class="aspect aspect--4x3"
+        >
+          <div
+            class="aspect__inner"
+          >
+            <img
+              alt=""
+              class="element__img"
+              src="https://images.unsplash.com/photo-1465414829459-d228b58caf6e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=7a7080fc0699869b1921cb1e7047c5b3"
+            />
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-sm-1 col-1@xs col-1@sm sort-mainblock__sizer"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Instantiate SortFilter component via mount 2`] = `
+<div
+  class="row shuffle"
+  classtosort="sortblock"
+  style="overflow: hidden; height: 0px; transition: height 250ms cubic-bezier(0.4, 0.0, 0.2, 1);"
+>
+  <div
+    class="col-md-6 sortblock shuffle-item shuffle-item--visible"
+    data-groups="[\\"Cat\\",\\"Cat Procedures\\",\\"Cat Lift\\"]"
+    style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 1; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); transition-property: transform,opacity;"
+  >
+    <div
+      class="aspect aspect--4x3"
+    >
+      <div
+        class="aspect__inner"
+      >
+        <img
+          alt=""
+          class="element__img"
+          src="https://images.unsplash.com/photo-1484244233201-29892afe6a2c?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=14d236624576109b51e85bd5d7ebfbfc"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    aria-hidden="true"
+    class="col-md-6 sortblock shuffle-item shuffle-item--hidden"
+    data-groups="[\\"City\\"]"
+    style="position: absolute; top: 0px; left: 0px; visibility: visible; will-change: transform; opacity: 0; transition-duration: 250ms; transition-timing-function: cubic-bezier(0.4, 0.0, 0.2, 1); transition-property: transform,opacity; transform: translate(0px, 0px) scale(0.001); transition-delay: 0ms;"
+  >
+    <div
+      class="aspect aspect--4x3"
+    >
+      <div
+        class="aspect__inner"
+      >
+        <img
+          alt=""
+          class="element__img"
+          src="https://images.unsplash.com/photo-1465414829459-d228b58caf6e?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&h=600&fit=crop&s=7a7080fc0699869b1921cb1e7047c5b3"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    class="col-sm-1 col-1@xs col-1@sm sort-mainblock__sizer"
+  />
+</div>
+`;
+
+exports[`Instantiate SortFilter component via shallow 1`] = `ShallowWrapper {}`;

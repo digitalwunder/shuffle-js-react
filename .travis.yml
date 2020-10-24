@@ -1,0 +1,28 @@
+language: node_js
+os:
+  - linux
+node_js:
+  - '12'
+  # - '10'
+script:
+  - npm run test:all #eslint & test
+  - npm run test:jest #react
+  - npm run build #build lib/
+  - npm run predeploy #build public/
+
+# v2
+deploy:
+  - provider: npm
+    edge: true
+    email: $NPM_EMAIL
+    api_token: $NPM_API_TOKEN
+    cleanup: false
+    on:
+      tags: true
+      branch: master
+  - provider: pages
+    skip_cleanup: true
+    local_dir: public # # defaults to root otherwise
+    github_token: $GITHUB_TOKEN_PUBLIC_REPOS  # Set in the settings page of your repository, as a secure variable
+    on:
+      branch: master
