@@ -17,7 +17,8 @@ class Core extends Component {
     super(props);
     this.state = {
       // taxonomies: {},
-      taxonomiesBodyTypeNames: []
+      taxonomiesBodyTypeNames: [],
+      sortAllText: ''
     };
     this.element = React.createRef();
     this.sizer = React.createRef();
@@ -33,7 +34,7 @@ class Core extends Component {
         this.setState({
           // taxonomies,
           taxonomiesBodyTypeNames: Object.keys(taxonomies['Body Types']),
-          sortAllText: sortAllText
+          sortAllText
         });
       });
   }
@@ -157,7 +158,7 @@ class Core extends Component {
   }
 
   render() {
-    const { taxonomiesBodyTypeNames } = this.state;
+    const { taxonomiesBodyTypeNames, sortAllText } = this.state;
     const { children, itemSelector } = this.props;
     return (
       <div className="sort-mainblock">
@@ -184,7 +185,7 @@ Core.propTypes = {
   // taxonomies: PropTypes.arrayOf(PropTypes.object).isRequired,
   taxonomies: PropTypes.objectOf(PropTypes.object).isRequired,
   itemSelector: PropTypes.string.isRequired,
-  sortAllText: PropTypes.string,
+  sortAllText: PropTypes.string.isRequired,
   // children: PropTypes.element.isRequired
   children: PropTypes.oneOfType([
     PropTypes.element,

@@ -1,27 +1,49 @@
-import React from 'react';
-import $ from 'jquery';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import {
   jsUcfirst
 } from '../Utils/index';
 
-// import './index.css';
+export default class SortButtons extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      activeItem: this.props.sortAllText
+    };
+  }
 
-// const classnames = require('classnames');
+  // function SortButtons(props) {
+  // const [activeItem, setActiveItem] = useState('');
 
-// export default class SortButtons extends Component {
-export default function SortButtons(props) {
   // let taxonomiesArray = this.props.taxonomies;
-  const {
-    taxonomies: taxonomiesArray, titleButton, onClickByName, onClickAll, sortAllText, allTrue
-  } = props;
-  return (
-    <div id="sjsr-sort-button" className="col-md-12 procedure-main margin--5tb">
-      {titleButton ? <div>{titleButton}</div> : null }
-      {allTrue ? <button type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickAll}>{sortAllText}</button> : null }
-      {taxonomiesArray.map((taxonomy, index) => <button key={index} type="button" className="btn btn-outline-secondary btn-sm margin--5" onClick={onClickByName}>{jsUcfirst(taxonomy)}</button>)}
-    </div>
-  );
+
+  onClickByName = (e, name) => {
+    const { onClickByName } = this.props;
+
+    onClickByName(e);
+    this.setState({ activeItem: name });
+  }
+
+  onClickAll = (e, name) => {
+    const { onClickAll } = this.props;
+
+    onClickAll(e);
+    this.setState({ activeItem: name });
+  }
+
+  render() {
+    const {
+      taxonomies: taxonomiesArray, titleButton, sortAllText, allTrue
+    } = this.props;
+    const { activeItem } = this.state;
+    return (
+      <div id="sjsr-sort-button" className="col-md-12 procedure-main">
+        {titleButton ? <div>{titleButton}</div> : null }
+        {allTrue ? <button type="button" className={`btn btn-outline-secondary ${activeItem === sortAllText ? 'active' : ''}`} onClick={(e) => this.onClickAll(e, sortAllText)}>{sortAllText}</button> : null }
+        {taxonomiesArray.map((taxonomy, index) => <button key={index} type="button" className={`btn btn-outline-secondary ${activeItem === jsUcfirst(taxonomy) ? 'active' : ''}`} onClick={(e) => this.onClickByName(e, jsUcfirst(taxonomy))}>{jsUcfirst(taxonomy)}</button>)}
+      </div>
+    );
+  }
 }
 
 SortButtons.propTypes = {
@@ -38,16 +60,12 @@ SortButtons.defaultProps = {
   onClickByName: (event) => {
     event.preventDefault();
     event.stopPropagation();
-    $(document).on('click', '#sjsr-sort-button button', function () {
-      console.log('click')
-      $('.active').not($(this).addClass('active')).removeClass();
-    });
   },
   onClickAll: (event) => {
     event.preventDefault();
     event.stopPropagation();
   },
   allTrue: true,
-  sortAllText: 'All',
+  sortAllText: 'Show All',
   titleButton: null
 };

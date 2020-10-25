@@ -8,7 +8,7 @@ import './index.css';
 // export default class SortFilter extends Component {
 export default function SortFilter(props) {
   const {
-    defaultSort, taxonomies, children, itemSelector
+    defaultSort, taxonomies, children, itemSelector, sortAllText
   } = props;
   return (
     <div className="container">
@@ -16,6 +16,7 @@ export default function SortFilter(props) {
         defaultSort={defaultSort}
         taxonomies={taxonomies}
         itemSelector={itemSelector}
+        sortAllText={sortAllText}
         // option to pass more params for the buttons or use defautl
       >
         {children}
@@ -29,6 +30,7 @@ SortFilter.propTypes = {
   // taxonomies: PropTypes.arrayOf(PropTypes.object).isRequired,
   taxonomies: PropTypes.objectOf(PropTypes.object).isRequired,
   itemSelector: PropTypes.string.isRequired,
+  sortAllText: PropTypes.string.isRequired,
   // children: PropTypes.element.isRequired
   children: PropTypes.oneOfType([
     PropTypes.element,

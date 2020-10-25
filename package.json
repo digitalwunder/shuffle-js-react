@@ -1,6 +1,6 @@
 {
   "name": "react-shufflejs",
-  "version": "0.0.3",
+  "version": "0.1.2",
   "description": "React component for ShuffleJs",
   "main": "./lib/index.js",
   "scripts": {
@@ -31,7 +31,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ar-to/shufflejs-react.git"
+    "url": "git@github.com:digitalwunder/shuffle-js-react.git"
   },
   "keywords": [
     "shufflejs",
