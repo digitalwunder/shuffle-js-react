@@ -7,8 +7,9 @@ import {
 export default class SortButtons extends Component {
   constructor(props) {
     super(props);
+    const { sortAllText } = props.sortAllText;
     this.state = {
-      activeItem: this.props.sortAllText
+      activeItem: sortAllText
     };
   }
 
