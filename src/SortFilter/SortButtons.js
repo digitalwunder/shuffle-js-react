@@ -7,10 +7,22 @@ import {
 export default class SortButtons extends Component {
   constructor(props) {
     super(props);
-    const { sortAllText } = props.sortAllText;
     this.state = {
-      activeItem: sortAllText
+      activeItem: ''
     };
+  }
+
+  UNSAFE_componentWillMount() {
+    /**
+     * Kick off the network request and update the state once it returns.
+     */
+    const { sortAllText } = this.props;
+    this._loadProps()
+      .then(() => {
+        this.setState({
+          activeItem: sortAllText
+        });
+      });
   }
 
   // function SortButtons(props) {
@@ -30,6 +42,18 @@ export default class SortButtons extends Component {
 
     onClickAll(e);
     this.setState({ activeItem: name });
+  }
+
+  /**
+   * Set delay
+   * @return {Promise<Object[]>} A promise which resolves with an array of objects.
+   */
+  _loadProps() {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        resolve(this.props);
+      }, 500);
+    });
   }
 
   render() {

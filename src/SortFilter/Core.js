@@ -57,6 +57,7 @@ class Core extends Component {
   componentDidUpdate() {
     // Notify shuffle to dump the elements it's currently holding and consider
     // all elements matching the `itemSelector` as new.
+    console.log('update');
     this.shuffle.resetItems();
   }
 
