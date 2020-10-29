@@ -8,7 +8,7 @@ export default class SortButtons extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeItem: ''
+      activeItem: 'Show All'
     };
   }
 
@@ -16,19 +16,15 @@ export default class SortButtons extends Component {
     /**
      * Kick off the network request and update the state once it returns.
      */
-    const { sortAllText } = this.props;
-    this._loadProps()
-      .then(() => {
-        this.setState({
-          activeItem: sortAllText
-        });
-      });
+    // const { sortAllText } = this.props;
+    // console.log(sortAllText);
+    // this._loadProps()
+    //   .then(() => {
+    //     this.setState({
+    //       activeItem: sortAllText
+    //     });
+    //   });
   }
-
-  // function SortButtons(props) {
-  // const [activeItem, setActiveItem] = useState('');
-
-  // let taxonomiesArray = this.props.taxonomies;
 
   onClickByName = (e, name) => {
     const { onClickByName } = this.props;
@@ -44,18 +40,6 @@ export default class SortButtons extends Component {
     this.setState({ activeItem: name });
   }
 
-  /**
-   * Set delay
-   * @return {Promise<Object[]>} A promise which resolves with an array of objects.
-   */
-  _loadProps() {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(this.props);
-      }, 500);
-    });
-  }
-
   render() {
     const {
       taxonomies: taxonomiesArray, titleButton, sortAllText, allTrue
@@ -63,6 +47,7 @@ export default class SortButtons extends Component {
     const { activeItem } = this.state;
     return (
       <div id="sjsr-sort-button" className="col-md-12 procedure-main">
+        <p className="filter-content">Filter Content by #</p>
         {titleButton ? <div>{titleButton}</div> : null }
         {allTrue ? <button type="button" className={`btn btn-outline-secondary ${activeItem === sortAllText ? 'active' : ''}`} onClick={(e) => this.onClickAll(e, sortAllText)}>{sortAllText}</button> : null }
         {taxonomiesArray.map((taxonomy, index) => <button key={index} type="button" className={`btn btn-outline-secondary ${activeItem === jsUcfirst(taxonomy) ? 'active' : ''}`} onClick={(e) => this.onClickByName(e, jsUcfirst(taxonomy))}>{jsUcfirst(taxonomy)}</button>)}
